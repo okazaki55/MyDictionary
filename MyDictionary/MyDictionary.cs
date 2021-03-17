@@ -6,39 +6,51 @@ namespace MyDictionary
 {
     class MyDictionary<TKey, TValue>
     {
-        TKey[] keys;
-        TValue[] values;
+        TKey[] id;
+        TValue[] isim;
 
         public MyDictionary()
         {
-            keys = new TKey[0];
-            values = new TValue[0];
+            id = new TKey[0];
+            isim = new TValue[0];
         }
 
         public int Length { get; internal set; }
 
         public void Add(TKey Id, TValue Name)
         {
-            TKey[] tempKey = keys;
-            TValue[] tempValue = values;
+            TKey[] tempKey = id;
+            TValue[] tempValue = isim;
 
-            keys = new TKey[keys.Length + 1];
-            values = new TValue[values.Length + 1];
+            id = new TKey[id.Length + 1];
+            isim = new TValue[isim.Length + 1];
 
             for (int i = 0; i < tempKey.Length; i++)
             {
-                keys[i] = tempKey[i];                
+                id[i] = tempKey[i];                
             }
 
-            keys[keys.Length - 1] = Id;
+            id[id.Length - 1] = Id;
 
             for (int i = 0; i < tempValue.Length; i++)
             {
-                values[i] = tempValue[i];
+                isim[i] = tempValue[i];
             }
                         
-            values[values.Length - 1] = Name;
+            isim[isim.Length - 1] = Name;
         }
-        
+
+        public int Count
+        {
+            get { return isim.Length; }
+        }
+
+        public void Listele()
+        {
+            for (int i = 0; i < isim.Length; i++)
+            {
+                Console.WriteLine("Sıra: " + id[i] +" "+ "Meyve adı: " + isim[i]);
+            }
+        }
     }    
 }

@@ -11,13 +11,9 @@ namespace MyDictionary
             sozcukler.Add(2, "Armut");
             sozcukler.Add(3, "Portakal");
             sozcukler.Add(4, "Mandalina");
-
-            foreach (string sozluk in sozcukler)
-            {
-                Console.WriteLine(sozluk);
-            }
-
-            Console.WriteLine(sozcukler.Length);           
+            
+            Console.WriteLine(sozcukler.Count);
+            sozcukler.Listele();
             
         }
     }
